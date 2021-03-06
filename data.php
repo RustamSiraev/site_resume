@@ -23,11 +23,6 @@ return [
             'years' => '2020'
         ],
         [
-            'faculty' => 'PHP-разработчик',
-            'university' => 'Glo Academy',
-            'years' => '2019'
-        ],
-        [
             'faculty' => 'Профессия веб-разработчик',
             'university' => 'Skillbox',
             'years' => '2019'

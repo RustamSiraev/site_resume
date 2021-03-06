@@ -1,13 +1,15 @@
 <?php
-$data = require_once('data.php');
-$aboutData = $data['about'];
-$educationData = $data['education'];
-$languagesData = $data['languages'];
-$interestsData = $data['interests'];
-$aboutMyData =  $data['aboutMy'];
-$experienceData =  $data['experience'];
-$skillSetData =  $data['skillSet'];
-$projectsData =  $data['projects'];
+$connection = new PDO('mysql:host=localhost;dbname=resume_db;charset=utf8;','root','root');
+$aboutData = $connection->query("SELECT * FROM about");
+$aboutData = $aboutData->fetch();
+$educationData = $connection->query("SELECT * FROM education");
+$languagesData = $connection->query("SELECT * FROM languages");
+$interestsData = $connection->query("SELECT * FROM interests");
+$aboutMyData =  $connection->query("SELECT * FROM aboutmy");
+$aboutMyData = $aboutMyData->fetch();
+$experienceData =  $connection->query("SELECT * FROM experience");
+$skillSetData =  $connection->query("SELECT * FROM skillSet");
+$projectsData =  $connection->query("SELECT * FROM projects");
 ?>
 
 <!DOCTYPE html>
@@ -58,8 +60,8 @@ $projectsData =  $data['projects'];
                 <li class="phone"><i class="fa fa-phone"></i><a
                             href="tel:<?= $aboutData['phone'] ?>"><?= $aboutData['phone'] ?></a></li>
                 <li class="website"><i class="fa fa-globe"></i><a
-                            href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/"
-                            target="_blank">portfoliosite.com</a></li>
+                            href="https://<?= $aboutData['site'] ?>"
+                            target="_blank"><?= $aboutData['site'] ?></a></li>
             </ul>
         </div><!--//contact-container-->
         <div class="education-container container-block">
@@ -77,7 +79,7 @@ $projectsData =  $data['projects'];
             <h2 class="container-block-title">Знание языков</h2>
             <ul class="list-unstyled interests-list">
                 <? foreach ($languagesData as $language) { ?>
-                <li><?= $language ?><span class="lang-desc"> (Средний)</span></li>
+                <li><?= $language['title'] ?><span class="lang-desc"> (Средний)</span></li>
                 <? } ?>
             </ul>
         </div><!--//interests-->
@@ -86,7 +88,7 @@ $projectsData =  $data['projects'];
             <h2 class="container-block-title">Интересы</h2>
             <ul class="list-unstyled interests-list">
                 <? foreach ($interestsData as $interest) { ?>
-                <li><?= $interest ?></li>
+                <li><?= $interest ['title'] ?></li>
                 <? } ?>
             </ul>
         </div><!--//interests-->
@@ -98,7 +100,7 @@ $projectsData =  $data['projects'];
         <section class="section summary-section">
             <h2 class="section-title"><i class="fa fa-user"></i>Обо мне</h2>
             <div class="summary">
-                <p><?= $aboutMyData?></p>
+                <p><?= $aboutMyData['name'] ?></p>
             </div><!--//summary-->
         </section><!--//section-->
 
