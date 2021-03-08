@@ -1,0 +1,15 @@
+.ts-mw-icon {background:rgba(37, 167, 243, 1);color:rgba(255, 255, 255, 1);background: transparent;}
+.ts-mw-button.open .ts-mw-icon.mw-animation-2 {background:rgba(37, 167, 243, 1);}
+.ts-mw-button.open .ts-mw-icon.mw-animation-2 .slides {display: none;}
+.ts-mw-button .ts-mw-icon .slides + i {display: none;}.ts-mw-button.open .ts-mw-icon .slides + i {display: flex;}
+.ts-mw-button {right:20px;bottom:20px;}
+.ts-mw-block {right:5px;bottom:53px;}
+.ts-mw-li a {color:rgba(0, 0, 0, 1)!important;}
+.ts-mw-li a:hover {color:rgba(37, 167, 242, 1)!important;}
+.ts-mw-button, .ts-mw-icon, .ts-mw-icon i, .ts-mw-icon .slides span img, .ts-mw-block.mw-no-bg img, .ts-mw-pulse {width:53px;height:53px;}
+.ts-mw-substrate {background:rgba(0, 0, 0, 0.2);}
+@media only screen and (max-width: 768px) {
+.ts-mw-button, .ts-mw-icon, .ts-mw-icon i, .ts-mw-icon .slides span img, .ts-mw-block.mw-no-bg img, .ts-mw-pulse {width:80px;height:80px;}
+.ts-mw-block {bottom:45px;}
+.ts-mw-button {right:20px;bottom:20px;}
+}
