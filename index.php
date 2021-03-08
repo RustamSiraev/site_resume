@@ -45,7 +45,6 @@ $projectsData =  $connection->query("SELECT * FROM projects");
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
     <link href="assets/css/messengers_widget.css" type="text/css" rel="stylesheet" media="screen" />
     <link href="assets/css/messengers_widget_settings.css" type="text/css" rel="stylesheet" media="screen" />
-    <script src="assets/plugins/jquery-2.1.1.min.js"></script>
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
 </head>
 
@@ -133,13 +132,52 @@ $projectsData =  $connection->query("SELECT * FROM projects");
 
         <section class="section projects-section">
             <h2 class="section-title"><i class="fa fa-archive"></i>Сайты</h2>
-            <div class="intro">
-            </div><!--//intro-->
-            <? foreach ($projectsData as $project) { ?>
-            <div class="item">
-                <span class="project-title"><a href="<?= $project['link'] ?>" target="_blank"><?= $project['name'] ?></a></span> - <span class="project-tagline"><?= $project['description'] ?></span>
-            </div><!--//item-->
-            <? } ?>
+            <div class="item text-center">
+                <div id="carousel" class="carousel slide" data-ride="carousel" style="display: inline-block;">
+                    <!-- Индикаторы -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel" data-slide-to="1"></li>
+                        <li data-target="#carousel" data-slide-to="2"></li>
+                        <li data-target="#carousel" data-slide-to="3"></li>
+                        <li data-target="#carousel" data-slide-to="4"></li>
+                        <li data-target="#carousel" data-slide-to="5"></li>
+                        <li data-target="#carousel" data-slide-to="6"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <a href="https://www.vianor-ufa.ru/" target="_blank"><img src="assets/images/vianor-ufa-min.jpg" alt="..."></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.kolesaotsklada.ru/" target="_blank"><img src="assets/images/kolesaotsklada-min.jpg" alt="..."></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.perezagruzka-sc.ru/" target="_blank"><img src="assets/images/perezagruzka-min.jpg" alt="..."></a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.master-instrument.top/" target="_blank"><img src="assets/images/master-instrument-min.jpg" alt="..."></a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.promtransneft.ru/" target="_blank"><img src="assets/images/promtransneft-min.jpg" alt="..."></a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.metmebeltorg.ru/" target="_blank"><img src="assets/images/metmebeltorg-min.jpg" alt="..."></a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.remont-chemodanov.top/" target="_blank"><img src="assets/images/remont-chemodanov-min.jpg" alt="..."></a>
+                        </div>
+                    </div>
+                    <!-- Элементы управления -->
+                    <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Предыдущий</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Следующий</span>
+                    </a>
+                </div>
+            </div>
         </section><!--//section-->
 
         <section class="skills-section section">
@@ -156,7 +194,6 @@ $projectsData =  $connection->query("SELECT * FROM projects");
                 <? } ?>
             </div>
         </section><!--//skills-section-->
-
     </div><!--//main-body-->
 </div>
 
@@ -217,5 +254,3 @@ $projectsData =  $connection->query("SELECT * FROM projects");
 </script>
 </body>
 </html>
-
-
